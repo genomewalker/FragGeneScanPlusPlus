@@ -1127,7 +1127,7 @@ void print_gene(Strand strand, int start_t, int end_t, int frame, char *output_b
     /* Don't forget to print the reverse complement if in opposite strand */
     if (strand == FORWARD_STRAND) {
         get_dna(dna_seq, dna_len, f_dna);
-        sprintf(temp_str_ptr, "%s\n", f_dna);
+        sprintf(temp_str_ptr, "%s\n", dna);
     } else {
         get_rc_dna(dna_seq, dna_len, rc_dna);
         sprintf(temp_str_ptr, "%s\n", rc_dna);
