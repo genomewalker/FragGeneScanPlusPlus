@@ -1111,16 +1111,15 @@ void print_gene(Strand strand, int start_t, int end_t, int frame, char *output_b
     /* Now fill the AA buffer with the translated proteins */
     if (multiple)
         strcat(aa_buffer, "\t");
-        strcat(dna_buffer, "\t");
     sprintf(temp_str_ptr, "%s_%d_%d_%c\n", sequence_head_short, start_t, end_t, strand_sign);
     strcat(aa_buffer, temp_str_ptr);
     get_protein(dna_seq, dna_len, protein, strand);
-    sprintf(temp_str_ptr, "%s\n", protein);
-    strcat(aa_buffer, temp_str_ptr);
+    sprintf(temp_str_ptr, "%s\t", protein);
+    //strcat(aa_buffer, temp_str_ptr);
 
     /* Similar for the DNA buffer */
-    sprintf(temp_str_ptr, "%s_%d_%d_%c\n", sequence_head_short, start_t, end_t, strand_sign);
-    strcat(dna_buffer, temp_str_ptr);
+    // sprintf(temp_str_ptr, "%s_%d_%d_%c\n", sequence_head_short, start_t, end_t, strand_sign);
+    //strcat(dna_buffer, temp_str_ptr);
     /* Don't forget to print the reverse complement if in opposite strand */
     if (strand == FORWARD_STRAND) {
         sprintf(temp_str_ptr, "%s\n", dna);
@@ -1128,5 +1127,5 @@ void print_gene(Strand strand, int start_t, int end_t, int frame, char *output_b
         get_rc_dna(dna_seq, dna_len, rc_dna);
         sprintf(temp_str_ptr, "%s\n", rc_dna);
     }
-    strcat(dna_buffer, temp_str_ptr);
+    strcat(aa_buffer, temp_str_ptr);
 }
