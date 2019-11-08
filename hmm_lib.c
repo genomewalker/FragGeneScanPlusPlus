@@ -1093,7 +1093,7 @@ void print_gene(Strand strand, int start_t, int end_t, int frame, char *output_b
     if (strand == UNKNOWN_STRAND)
         return;
 
-    /* Print the insertions and deletions to the output buffer */
+    /* Print the insertions and deletions to the output buffer
     sprintf(temp_str_ptr, "%d\t%d\t%c\t%d\t", start_t, end_t, strand_sign, frame);
     strcat(output_buffer, temp_str_ptr);
     strcat(output_buffer, "I:");
@@ -1107,10 +1107,12 @@ void print_gene(Strand strand, int start_t, int end_t, int frame, char *output_b
         strcat(output_buffer, temp_str_ptr);
     }
     strcat(output_buffer, "\n");
-
+    */
     /* Now fill the AA buffer with the translated proteins */
     if (multiple)
         strcat(aa_buffer, "\t");
+        strcat(dna_buffer, "\t");
+
     sprintf(temp_str_ptr, "%s_%d_%d_%c##", sequence_head_short, start_t, end_t, strand_sign);
     strcat(aa_buffer, temp_str_ptr);
     get_protein(dna_seq, dna_len, protein, strand);
