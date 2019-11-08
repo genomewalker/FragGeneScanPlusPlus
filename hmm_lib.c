@@ -2,7 +2,7 @@
 
 void viterbi(HMM *hmm_ptr, const char *O, char *output_buffer, char *aa_buffer,
              char *dna_buffer, char *sequence_head, bool whole_genome,
-             int len_seq, char *dna, char *dna_rc,
+             int len_seq, char *dna, char *dna_rc, char *dna_f,
              char *protein, int *insertions, int *deletions, char *temp_str_ptr) {
 
     int *vpath;                          // optimal path after backtracking
@@ -767,6 +767,7 @@ void viterbi(HMM *hmm_ptr, const char *O, char *output_buffer, char *aa_buffer,
             dna[0] = '\0';
             dna_rc[0] = '\0';
             protein[0] = '\0';
+            dna_f[0] = '\0';
 
             nr_insertions = 0;
             nr_deletions = 0;
@@ -809,7 +810,7 @@ void viterbi(HMM *hmm_ptr, const char *O, char *output_buffer, char *aa_buffer,
 
             if (dna_id > gene_len) {
                 print_gene(strand, start_t, end_t, frame, output_buffer, aa_buffer, dna_buffer, sequence_head,
-                           dna, dna_id + 1, dna_seq, dna_rc, protein, insertions, deletions, nr_insertions, nr_deletions, temp_str_ptr,multiple);
+                           dna, dna_id + 1, dna_seq, dna_rc, protein, dna_f, insertions, deletions, nr_insertions, nr_deletions, temp_str_ptr,multiple);
                 multiple++;
             }
 
@@ -864,6 +865,7 @@ void viterbi(HMM *hmm_ptr, const char *O, char *output_buffer, char *aa_buffer,
     dna = 0;
     dna_rc = 0;
     protein = 0;
+    dna_f = 0;
 }
 
 void get_prob_from_cg(HMM *hmm_ptr, TRAIN *train_ptr, const char *O, int len_seq) {
