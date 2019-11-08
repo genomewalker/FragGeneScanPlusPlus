@@ -312,7 +312,7 @@ void get_train_from_file(char *filename, HMM *hmm_ptr, char *mfilename, char *mf
  */
 void viterbi(HMM *hmm_ptr, const char *input_seq, char* output_buffer, char* aa_buffer, char *dna_buffer,
              char *sequence_head, bool whole_genome, int seq_len,
-             char *dna_ptr, char *dna1_ptr, char *protein_ptr,
+             char *dna_ptr, char *dna1_ptr, char *protein_ptr, char *dna2_ptr,
              int *insertions, int *deletions, char *temp_str_ptr);
 
 /**

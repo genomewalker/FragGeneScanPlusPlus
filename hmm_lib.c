@@ -2,8 +2,8 @@
 
 void viterbi(HMM *hmm_ptr, const char *O, char *output_buffer, char *aa_buffer,
              char *dna_buffer, char *sequence_head, bool whole_genome,
-             int len_seq, char *dna, char *dna_rc, char *dna_f,
-             char *protein, int *insertions, int *deletions, char *temp_str_ptr) {
+             int len_seq, char *dna, char *dna_rc,
+             char *protein, char *dna_f, int *insertions, int *deletions, char *temp_str_ptr) {
 
     int *vpath;                          // optimal path after backtracking
     int **path;                          // viterbi path array
@@ -1089,7 +1089,7 @@ void get_train_from_file(char *filename, HMM *hmm_ptr, char *mfilename,
 void print_gene(Strand strand, int start_t, int end_t, int frame, char *output_buffer, char *aa_buffer, char *dna_buffer,
                 const char *sequence_head_short, const char *dna, int dna_len, const Nucleotide dna_seq[], char *rc_dna, char *protein, char *f_dna,
                 const int *insertions, const int *deletions, int insertions_len, int deletions_len, char *temp_str_ptr, unsigned int multiple) {
-    int i;
+
     char strand_sign = (strand == FORWARD_STRAND)? '+' : '-';
 
     if (strand == UNKNOWN_STRAND)
