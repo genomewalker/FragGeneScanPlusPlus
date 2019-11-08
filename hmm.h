@@ -328,7 +328,7 @@ void free_hmm(HMM *hmm);
  * @param[out] rc_dna The output buffer for the reverse-complement.
  */
 void get_rc_dna(const Nucleotide dna[], int dna_len, char *rc_dna);
-void get_dna(const Nucleotide dna[], int dna_len, char *rc_dna);
+void get_dna(const Nucleotide dna[], int dna_len, char *f_dna);
 
 void print_usage();
 
@@ -373,7 +373,7 @@ void print_gene(int codon_start, int start_t, int end_t, int frame,
                 char *output_buffer, char *aa_buffer, char *dna_buffer,
                 const char *sequence_head_short,
                 const char *dna, int dna_len, const Nucleotide dna_seq[],
-                char *rc_dna, char *protein,
+                char *rc_dna, char *protein, char *f_dna,
                 const int *insertions, const int *deletions, int insertions_len, int deletions_len,
                 char *temp_str_ptr, unsigned int multiple);
 

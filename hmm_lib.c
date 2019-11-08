@@ -809,7 +809,7 @@ void viterbi(HMM *hmm_ptr, const char *O, char *output_buffer, char *aa_buffer,
 
             if (dna_id > gene_len) {
                 print_gene(strand, start_t, end_t, frame, output_buffer, aa_buffer, dna_buffer, sequence_head,
-                           dna, dna_id + 1, dna_seq, dna_rc, protein, insertions, deletions, nr_insertions, nr_deletions, temp_str_ptr,multiple);
+                           dna, dna_id + 1, dna_seq, dna_rc, protein, f_dna, insertions, deletions, nr_insertions, nr_deletions, temp_str_ptr,multiple);
                 multiple++;
             }
 
@@ -1085,7 +1085,7 @@ void get_train_from_file(char *filename, HMM *hmm_ptr, char *mfilename,
 }
 
 void print_gene(Strand strand, int start_t, int end_t, int frame, char *output_buffer, char *aa_buffer, char *dna_buffer,
-                const char *sequence_head_short, const char *dna, int dna_len, const Nucleotide dna_seq[], char *rc_dna, char *protein,
+                const char *sequence_head_short, const char *dna, int dna_len, const Nucleotide dna_seq[], char *rc_dna, char *protein, char *f_dna,
                 const int *insertions, const int *deletions, int insertions_len, int deletions_len, char *temp_str_ptr, unsigned int multiple) {
     int i;
     char strand_sign = (strand == FORWARD_STRAND)? '+' : '-';
@@ -1124,8 +1124,8 @@ void print_gene(Strand strand, int start_t, int end_t, int frame, char *output_b
     //strcat(dna_buffer, temp_str_ptr);
     /* Don't forget to print the reverse complement if in opposite strand */
     if (strand == FORWARD_STRAND) {
-        get_dna(dna_seq, dna_len, rc_dna);
-        sprintf(temp_str_ptr, "%s\n", rc_dna);
+        get_dna(dna_seq, dna_len, f_dna);
+        sprintf(temp_str_ptr, "%s\n", f_dna);
     } else {
         get_rc_dna(dna_seq, dna_len, rc_dna);
         sprintf(temp_str_ptr, "%s\n", rc_dna);
