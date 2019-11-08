@@ -1110,7 +1110,7 @@ void print_gene(Strand strand, int start_t, int end_t, int frame, char *output_b
 
     /* Now fill the AA buffer with the translated proteins */
     if (multiple)
-        strcat(aa_buffer, "##");
+        strcat(aa_buffer, "|");
     sprintf(temp_str_ptr, "%s_%d_%d_%c\t", sequence_head_short, start_t, end_t, strand_sign);
     strcat(aa_buffer, temp_str_ptr);
     get_protein(dna_seq, dna_len, protein, strand);

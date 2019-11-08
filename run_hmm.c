@@ -514,7 +514,7 @@ void writeAminoAcids(FILE *aa_outfile_fp, ThreadData *td, unsigned int buffer) {
         if (td->aa_buffer[buffer][j][0]!=0) {
             ptrc=td->aa_buffer[buffer][j];
             while (*ptrc!='\0') {
-                if (*ptrc=='##') *ptrc='>';
+                if (*ptrc=='|') *ptrc='>';
                 ptrc++;
             }
             fprintf(aa_outfile_fp, "%s", td->aa_buffer[buffer][j]);
