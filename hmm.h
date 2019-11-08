@@ -328,6 +328,7 @@ void free_hmm(HMM *hmm);
  * @param[out] rc_dna The output buffer for the reverse-complement.
  */
 void get_rc_dna(const Nucleotide dna[], int dna_len, char *rc_dna);
+void get_dna(const Nucleotide dna[], int dna_len, char *rc_dna);
 
 void print_usage();
 

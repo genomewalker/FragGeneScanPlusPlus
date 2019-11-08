@@ -237,6 +237,13 @@ void get_rc_dna(const Nucleotide dna[], int dna_len, char *reverse_complement) {
         reverse_complement[dna_len-i-1] = NUCL_CHARACTERS_RC[dna[i]];
 }
 
+void get_dna(const Nucleotide dna[], int dna_len, char *dna2) {
+    int i;
+
+    for (i = 0; i < dna_len; i++)
+        dna2[i] = dna[i];
+}
+
 void get_protein(const Nucleotide dna[], int dna_len, char *protein, Strand strand) {
     int i;
 
