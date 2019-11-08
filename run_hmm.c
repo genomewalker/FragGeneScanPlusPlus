@@ -511,13 +511,13 @@ void writeAminoAcids(FILE *aa_outfile_fp, ThreadData *td, unsigned int buffer) {
     for (j = 0; j < td->output_num_sequences[buffer]; j++) {
         writer_counter++;
         char *ptrc;
-        if (td->aa_buffer[buffer][j][0]!=0) {
-            ptrc=td->aa_buffer[buffer][j];
+        if (td->dna_buffer[buffer][j][0]!=0) {
+            ptrc=td->dna_buffer[buffer][j];
             while (*ptrc!='\0') {
                 if (*ptrc=='\t') *ptrc='>';
                 ptrc++;
             }
-            fprintf(aa_outfile_fp, ">%s", td->aa_buffer[buffer][j]);
+            fprintf(aa_outfile_fp, ">%s", td->dna_buffer[buffer][j]);
         }
 
         //!! Why are we clearing dna and output buff?
