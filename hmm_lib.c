@@ -39,7 +39,7 @@ void viterbi(HMM *hmm_ptr, const char *O, char *output_buffer, char *aa_buffer,
     /* initialize                                                  */
     /***************************************************************/
 
-    int gene_len = (whole_genome)? 120 : 60;
+    int gene_len = (whole_genome)? 120 : 45;
 
     alpha = (double **)dmatrix(len_seq);
     path = (int **)imatrix(len_seq);
