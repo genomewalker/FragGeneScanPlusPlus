@@ -73,7 +73,7 @@ void parseArguments(int argc, char **argv) {
         case 'o':
             strcpy(out_file, optarg);
             strcpy(aa_file, out_file);
-            strcat(aa_file, ".faa");
+            strcat(aa_file, ".tsv");
             strcpy(dna_file, out_file);
             strcat(dna_file, ".ffn");
             break;
