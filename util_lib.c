@@ -239,11 +239,11 @@ void get_rc_dna(const Nucleotide dna[], int dna_len, char *reverse_complement) {
 }
 
 void get_dna(const Nucleotide dna[], int dna_len, char *dna3) {
-    static char NUCL_CHARACTERS_RC[] = "NTGCA";
+    static char NUCL_CHARACTERS[] = "NTGCA";
     int i;
 
     for (i = 0; i < dna_len; i++)
-        dna3[i] = char dna[i];
+        dna3[i] = NUCL_CHARACTERS[dna[i]];
     dna3[(dna_len)] = '\0';
 }
 
