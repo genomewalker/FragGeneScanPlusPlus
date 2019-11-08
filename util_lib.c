@@ -242,7 +242,7 @@ void get_dna(const Nucleotide dna[], int dna_len, char *dna3) {
     int i;
 
     for (i = 0; i < dna_len; i++)
-        dna3[i] = dna[i];
+        dna3[dna_len-i-1] = dna[i];
     dna3[(dna_len)] = '\0';
 }
 
