@@ -457,6 +457,7 @@ void thread_data_init(ThreadData *td, unsigned int id) {
 
     td->dna = calloc(STRINGLEN, sizeof(char));
     td->dna1 = calloc(STRINGLEN, sizeof(char));
+    td->dna2 = calloc(STRINGLEN, sizeof(char));
     td->protein = calloc(STRINGLEN, sizeof(char));
     td->temp_str = calloc(STRINGLEN, sizeof(char));
 
@@ -605,7 +606,7 @@ void runViterbiOnBuffers(ThreadData *td, unsigned int b) {
             viterbi(td->hmm, td->record_sequences[b][i], td->output_buffer[b][i],
                     td->aa_buffer[b][i], td->dna_buffer[b][i],
                     td->record_headers[b][i], td->wholegenome, td->record_sequences_lens[b][i],
-                    td->dna, td->dna1, td->protein, td->insert, td->c_delete, td->temp_str);
+                    td->dna, td->dna1, td->protein, td->dna2, td->insert, td->c_delete, td->temp_str);
         }
     }
 

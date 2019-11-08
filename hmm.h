@@ -255,6 +255,7 @@ typedef struct {
     /* Temporary buffers */
     char* dna;
     char* dna1;
+    char* dna2;
     char* protein;
     char* temp_str;
 
