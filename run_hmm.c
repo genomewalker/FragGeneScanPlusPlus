@@ -517,7 +517,7 @@ void writeAminoAcids(FILE *aa_outfile_fp, ThreadData *td, unsigned int buffer) {
                 if (*ptrc=='\t') *ptrc='>';
                 ptrc++;
             }
-            fprintf(aa_outfile_fp, ">%s", td->aa_buffer[buffer][j]);
+            fprintf(aa_outfile_fp, "%s", td->aa_buffer[buffer][j]);
         }
 
         //!! Why are we clearing dna and output buff?
