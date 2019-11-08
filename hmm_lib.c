@@ -809,7 +809,7 @@ void viterbi(HMM *hmm_ptr, const char *O, char *output_buffer, char *aa_buffer,
 
             if (dna_id > gene_len) {
                 print_gene(strand, start_t, end_t, frame, output_buffer, aa_buffer, dna_buffer, sequence_head,
-                           dna, dna_id + 1, dna_seq, dna_rc, protein, f_dna, insertions, deletions, nr_insertions, nr_deletions, temp_str_ptr,multiple);
+                           dna, dna_id + 1, dna_seq, dna_rc, protein, insertions, deletions, nr_insertions, nr_deletions, temp_str_ptr,multiple);
                 multiple++;
             }
 
